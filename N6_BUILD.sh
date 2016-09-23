@@ -12,6 +12,7 @@ mkdir ~/noobbuilds/device/moto/shamu-kernel
 rm ~/noobbuilds/device/moto/shamu-kernel/zImage-dtb
 cp ~/noobbuilds/kernel/moto/shamu/arch/arm/boot/zImage-dtb ~/noobbuilds/device/moto/shamu-kernel
 source build/envsetup.sh
+export USE_NINJA=false
 make clobber
 lunch noobbuilds_n6-userdebug
 export USE_CCACHE=1

@@ -13,3 +13,7 @@ Use N6P_BUILD.sh ---->   To build angler nexus 6P
 
 Use N9_BUILD.sh ---->   To build flounder nexus 9
 
+NOTE: The build scripts diable ninja if you want to use ninja
+      remove the line      export USE_NINJA=false   or change
+      the false to true.
+

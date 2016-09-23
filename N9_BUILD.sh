@@ -12,6 +12,7 @@ mkdir ~/noobbuilds/device/htc/flounder-kernel
 rm ~/noobbuilds/device/htc/flounder-kernel/Image.gz-dtb
 cp ~/noobbuilds/kernel/htc/flounder/arch/arm64/boot/Image.gz-dtb ~/noobbuilds/device/htc/flounder-kernel
 source build/envsetup.sh
+export USE_NINJA=false
 make clobber
 lunch noobbuilds_n9-userdebug
 export USE_CCACHE=1
