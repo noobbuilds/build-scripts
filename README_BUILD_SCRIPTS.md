@@ -1,0 +1,22 @@
+NOOBBUILDS Build Scripts
+
+NOTE: Prior to using the build script check the file properties to assure it 
+is executable and change if not.
+
+
+
+Use N6PCLEAN ---->   To clean build angler nexus 6P
+
+Use N6PDIRTY ---->   To dirty build angler nexus 6P
+
+Use N9CLEAN  ---->   To clean build flounder nexus 9
+
+Use N9DIRTY  ---->   To dirty build flounder nexus 9
+
+
+
+Current scripts will use ninja for build. To disable ninja use 
+
+            export USE_NINJA=false 
+
+   in your path.         

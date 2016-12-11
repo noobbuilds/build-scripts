@@ -1,0 +1,10 @@
+#!/bin/bash
+# Clean N6P ROM Build
+export JACK_SERVER_VM_ARGUMENTS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4g"
+./prebuilts/sdk/tools/jack-admin kill-server
+./prebuilts/sdk/tools/jack-admin start-server
+source build/envsetup.sh
+make clobber
+breakfast angler
+export USE_CCACHE=1
+mka bacon
