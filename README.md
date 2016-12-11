@@ -1,3 +1,3 @@
 See noobbuilds_maifest repo for build instuctions
 
-See README_Build_Scripts.md for NOOBBUILDS build options.
+See README_BUILD_SCRIPTS for NOOBBUILDS build options.
