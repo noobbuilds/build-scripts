@@ -5,6 +5,10 @@ is executable and change if not.
 
 
 
+Use N6CLEAN ---->   To clean build angler nexus 6
+
+Use N6DIRTY ---->   To dirty build angler nexus 6
+
 Use N6PCLEAN ---->   To clean build angler nexus 6P
 
 Use N6PDIRTY ---->   To dirty build angler nexus 6P
