@@ -35,7 +35,7 @@ BUILD=
 read BUILD
 case "$BUILD" in 
      '1') brunch "$N6";;
-	 '2') brunch "$N6P";;
-	 '3') brunch "$N9";;
+     '2') brunch "$N6P";;
+     '3') brunch "$N9";;
 esac
 		  
