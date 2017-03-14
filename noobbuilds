@@ -1,0 +1,41 @@
+#!/bin/bash
+
+# NoobBuilds ROM Build script
+
+# export SRC="~/noob"
+USE_CCACHE=1
+JACK_SERVER_VM_ARGUMENTS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4g"
+export ENV='build/envsetup.sh'
+export N6='shamu'
+export N6P='angler'
+export N9='flounder'
+
+./prebuilts/sdk/tools/jack-admin kill-server
+./prebuilts/sdk/tools/jack-admin start-server
+
+source "$ENV"
+
+echo 'Would you like to clobber output directory? Y/N?:'
+CLEAN=
+read CLEAN
+case "$CLEAN" in
+	 'y') make clobber;;
+	 'n') ;;
+	 'Y') make clobber;;
+	 'N');;
+esac
+
+echo 'Select a device to build:'
+echo	 '1)'"$N6"
+echo	 '2)'"$N6P"
+echo	 '3)'"$N9"
+echo 'Your Selection (By Number):'
+
+BUILD=
+read BUILD
+case "$BUILD" in 
+     '1') brunch "$N6";;
+	 '2') brunch "$N6P";;
+	 '3') brunch "$N9";;
+esac
+		  
