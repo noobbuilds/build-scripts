@@ -3,15 +3,15 @@
 # NoobBuilds ROM Build script
 
 # export SRC="~/noob"
-USE_CCACHE=1
-JACK_SERVER_VM_ARGUMENTS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4g"
+
+export JACK_SERVER_VM_ARGUMENTS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4g"
+./prebuilts/sdk/tools/jack-admin kill-server
+./prebuilts/sdk/tools/jack-admin start-server
+export USE_CCACHE=1
 export ENV='build/envsetup.sh'
 export N6='shamu'
 export N6P='angler'
 export N9='flounder'
-
-./prebuilts/sdk/tools/jack-admin kill-server
-./prebuilts/sdk/tools/jack-admin start-server
 
 source "$ENV"
 
