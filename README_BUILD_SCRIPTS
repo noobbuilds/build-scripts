@@ -17,6 +17,8 @@ Use N9CLEAN  ---->   To clean build flounder nexus 9
 
 Use N9DIRTY  ---->   To dirty build flounder nexus 9
 
+Use noobbuilds ----> To be prompted whether to clobber output dir and prompted to build any device
+
 
 
 Current scripts will use ninja for build. To disable ninja use 
