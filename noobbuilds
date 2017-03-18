@@ -2,40 +2,45 @@
 
 # NoobBuilds ROM Build script
 
-# export SRC="~/noob"
-
 export JACK_SERVER_VM_ARGUMENTS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4g"
 ./prebuilts/sdk/tools/jack-admin kill-server
 ./prebuilts/sdk/tools/jack-admin start-server
 export USE_CCACHE=1
 export ENV='build/envsetup.sh'
-export N6='shamu'
-export N6P='angler'
-export N9='flounder'
+DEVICE=('shamu' 'angler' 'flounder')
+export PS3="Please make a selection ====> "
 
 source "$ENV"
 
-echo 'Would you like to clobber output directory? Y/N?:'
-CLEAN=
-read CLEAN
-case "$CLEAN" in
-	 'y') make clobber;;
-	 'n') ;;
-	 'Y') make clobber;;
-	 'N');;
-esac
+echo ' '
+echo '************************************************************************'
+echo '* Would you like to clobber output directory? Yes/No? Select a number: *'
+echo '************************************************************************'
 
-echo 'Select a device to build:'
-echo	 '1)'"$N6"
-echo	 '2)'"$N6P"
-echo	 '3)'"$N9"
-echo 'Your Selection (By Number):'
+select CLEAN in Yes No
+do
+	case "$CLEAN" in
+	     Yes) make clobber
+	          break
+	          ;;
+	     No) break;;
+	     *) echo "Please choose yes or no. Invalid selection, $REPLY.";;
+	esac
+done
 
-BUILD=
-read BUILD
-case "$BUILD" in 
-     '1') brunch "$N6";;
-     '2') brunch "$N6P";;
-     '3') brunch "$N9";;
-esac
-		  
+echo ' '
+echo '**********************************************'
+echo '* Choose a device to build? Select a number: *'
+echo '**********************************************'
+
+select BUILD in "${DEVICE[0]}" "${DEVICE[1]}" "${DEVICE[2]}"
+do
+	case "$BUILD" in
+	     "${DEVICE[0]}"|"${DEVICE[1]}"|"${DEVICE[2]}") brunch "$BUILD"
+	                                                   break
+	                                                   ;;
+	     *) echo "Please choose a device from the list. Invalid selection, $REPLY.";;
+	esac
+done
+exit
+
